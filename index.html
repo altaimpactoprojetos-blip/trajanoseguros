@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Trajano Seguros · Ronay Trajano, corretor de seguros</title>
+  <meta name="description" content="Trajano Seguros — corretora de seguros auto, residencial e vida. Ronay Trajano, corretor licenciado SUSEP.">
+  <meta name="theme-color" content="#07080c">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Trajano Seguros">
+  <meta property="og:description" content="Transparência, cuidado e proteção para você e o seu bem. Cotação gratuita de seguros.">
+  <meta property="og:image" content="assets/img/brasao.webp">
+  <link rel="icon" href="assets/img/logo.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Oswald:wght@500;600&family=Manrope:wght@400;500;600;700&family=Great+Vibes&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+
+<!-- Ícones (usados com <svg><use href="#i-..."/></svg>) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.01c-.24.68-1.41 1.3-1.95 1.38-.5.07-1.13.1-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.29.58-.36.78-.36h.56c.18 0 .42-.07.66.5.24.58.82 2.01.89 2.16.07.14.12.31.02.5-.1.19-.14.31-.29.48-.14.17-.3.38-.43.51-.14.14-.29.3-.13.59.17.29.74 1.22 1.59 1.97 1.09.97 2.01 1.27 2.3 1.42.29.14.46.12.63-.07.17-.19.72-.84.92-1.13.19-.29.38-.24.65-.14.26.1 1.68.79 1.97.94.29.14.48.22.55.34.07.12.07.7-.17 1.38Z"/></symbol>
+    <symbol id="i-car" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M5 16.5V19m14-2.5V19M3.5 12.5l1.8-5A2 2 0 0 1 7.2 6h9.6a2 2 0 0 1 1.9 1.5l1.8 5M3.5 12.5h17v4h-17zM7 14.5h.01M17 14.5h.01"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M3.5 11 12 4l8.5 7M5.5 9.5V20h13V9.5M10 20v-5.5h4V20"/></symbol>
+    <symbol id="i-life" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M12 20s-7.5-4.4-7.5-10A4.3 4.3 0 0 1 12 7.3 4.3 4.3 0 0 1 19.5 10c0 5.6-7.5 10-7.5 10Z"/></symbol>
+    <symbol id="i-biz" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M3.5 20.5h17M5 20.5V9l7-4.5L19 9v11.5M9 20.5v-5h6v5M9 11h.01M15 11h.01"/></symbol>
+    <symbol id="i-health" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M9.5 3.5h5v6h6v5h-6v6h-5v-6h-6v-5h6z"/></symbol>
+    <symbol id="i-plane" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="m3 13 3 1 3.5-2.5L5 5l2-1 7.5 5.5 3.7-2.6a1.6 1.6 0 0 1 1.9 2.5L13 16l-1 5-1.8 1-1-4.5L5 16z"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M2.5 12s3.5-6.5 9.5-6.5 9.5 6.5 9.5 6.5-3.5 6.5-9.5 6.5S2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+    <symbol id="i-hand" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M3 15.5h3l4.5 1.5h4a1.5 1.5 0 0 0 0-3H11m-5 4.5V12l4-1.5h3.5M14.5 14l5-2.2a1.5 1.5 0 0 1 1.2 2.7L14 19.5H9.5L6 18.5M12 3.5c1.1-1.1 3.2-.6 3.2 1.3 0 1.8-3.2 3.7-3.2 3.7S8.8 6.6 8.8 4.8c0-1.9 2.1-2.4 3.2-1.3Z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M12 3 4.5 6v5.5c0 4.6 3.2 8.2 7.5 9.5 4.3-1.3 7.5-4.9 7.5-9.5V6zM8.8 12l2.3 2.3 4.2-4.6"/></symbol>
+    <symbol id="i-badge" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M12 2.8l2.3 1.6 2.8-.1.9 2.7 2.2 1.7-.9 2.7.9 2.7-2.2 1.7-.9 2.7-2.8-.1L12 20.8l-2.3-1.6-2.8.1-.9-2.7-2.2-1.7.9-2.7-.9-2.7 2.2-1.7.9-2.7 2.8.1zM8.8 11.8l2.2 2.2 4.2-4.4"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M5 4h3.5l1.5 4-2 1.5a11 11 0 0 0 6.5 6.5l1.5-2 4 1.5V19a1.5 1.5 0 0 1-1.6 1.5C10.3 20 4 13.7 3.5 5.6A1.5 1.5 0 0 1 5 4Z"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+  </defs>
+</svg>
+
+<!-- ===== Navegação ===== -->
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Trajano Seguros, início">
+      <img src="assets/img/logo.webp" alt="" width="44" height="44">
+      <span>Trajano Seguros</span>
+    </a>
+    <ul class="nav-links" id="menu">
+      <li><a href="#seguros">Seguros</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#como-funciona">Como funciona</a></li>
+      <li><a href="#duvidas">Dúvidas</a></li>
+      <li><a href="#cotacao">Cotação</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="btn btn-gold" href="#cotacao"><svg><use href="#i-shield"/></svg><span>Cotação grátis</span></a>
+      <button class="menu-btn" type="button" aria-controls="menu" aria-expanded="false" aria-label="Abrir menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="inicio">
+  <!-- ===== 1. Início ===== -->
+  <section class="hero">
+    <svg class="hero-rings" viewBox="0 0 620 620" aria-hidden="true">
+      <g fill="none" stroke="#d4a24c">
+        <circle cx="310" cy="310" r="300" stroke-opacity=".18"/>
+        <circle cx="310" cy="310" r="270" stroke-opacity=".14"/>
+        <circle cx="310" cy="310" r="240" stroke-opacity=".1"/>
+        <circle cx="310" cy="310" r="210" stroke-opacity=".07"/>
+      </g>
+    </svg>
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="eyebrow rise">Corretora de seguros · Licenciado SUSEP</p>
+        <h1 class="rise d1">Proteção para você <em class="gold-text">e o seu bem</em>, com quem cuida de perto.</h1>
+        <p class="hero-lead rise d2">Seguro auto, residencial e de vida com transparência do primeiro contato ao dia em que você precisar acionar. Eu comparo as seguradoras, explico cada cobertura e fico ao seu lado no sinistro.</p>
+        <div class="hero-actions rise d3">
+          <a class="btn btn-gold" href="#cotacao">Fazer minha cotação <svg><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-ghost wa-link" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Falar no WhatsApp</a>
+        </div>
+        <div class="hero-proof rise d4">
+          <div><b>Várias seguradoras</b><small>Uma cotação, várias opções</small></div>
+          <div><b>Sem custo extra</b><small>A consultoria não tem taxa</small></div>
+          <div><b>Suporte no sinistro</b><small>Do aviso ao reparo</small></div>
+        </div>
+      </div>
+      <div class="portrait rise d2">
+        <img class="photo" src="assets/img/ronay-trajano.webp" alt="Ronay Trajano, corretor de seguros, de braços cruzados e sorrindo" width="720" height="749">
+        <img class="seal" src="assets/img/brasao.webp" alt="Brasão Trajano Seguros" width="140" height="140">
+        <div class="sig">Ronay Trajano</div>
+        <div class="badge">Corretor de seguros</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 2. Valores ===== -->
+  <section class="values" aria-label="Nossos valores">
+    <div class="wrap">
+      <div class="value"><svg><use href="#i-eye"/></svg><div><h3>Transparência</h3><p>Coberturas, franquias e exclusões explicadas antes de você assinar.</p></div></div>
+      <div class="value"><svg><use href="#i-hand"/></svg><div><h3>Cuidado</h3><p>Atendimento direto com o corretor, sem robô e sem fila de call center.</p></div></div>
+      <div class="value"><svg><use href="#i-shield"/></svg><div><h3>Proteção</h3><p>A apólice certa para o seu momento, revisada a cada renovação.</p></div></div>
+    </div>
+  </section>
+
+  <!-- ===== 3. Seguros ===== -->
+  <section class="block" id="seguros">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Seguros</p>
+          <h2>O que você quer <span class="gold-text">proteger</span> hoje?</h2>
+        </div>
+        <p>Trabalho com as principais seguradoras do mercado para montar a proposta que equilibra cobertura e preço para o seu perfil.</p>
+      </div>
+      <div class="services">
+        <article class="svc featured">
+          <div class="ico"><svg><use href="#i-car"/></svg></div>
+          <h3>Seguro Auto</h3>
+          <p>Carro, moto ou utilitário protegidos contra colisão, roubo, furto e danos a terceiros, com assistência 24 horas.</p>
+          <ul><li>Colisão</li><li>Roubo e furto</li><li>Guincho 24h</li><li>Carro reserva</li></ul>
+          <a href="#cotacao" data-tipo="Auto">Cotar seguro auto →</a>
+        </article>
+        <article class="svc">
+          <div class="ico"><svg><use href="#i-home"/></svg></div>
+          <h3>Residencial</h3>
+          <p>Casa ou apartamento, próprio ou alugado. Cobre incêndio, danos elétricos, roubo e oferece serviços de reparo.</p>
+          <ul><li>Incêndio</li><li>Danos elétricos</li><li>Chaveiro</li><li>Encanador</li></ul>
+          <a href="#cotacao" data-tipo="Residencial">Cotar residencial →</a>
+        </article>
+        <article class="svc">
+          <div class="ico"><svg><use href="#i-life"/></svg></div>
+          <h3>Seguro de Vida</h3>
+          <p>Amparo financeiro para quem você ama, com coberturas para morte, invalidez e doenças graves.</p>
+          <ul><li>Morte</li><li>Invalidez</li><li>Doenças graves</li><li>Funeral</li></ul>
+          <a href="#cotacao" data-tipo="Vida">Cotar seguro de vida →</a>
+        </article>
+        <article class="svc">
+          <div class="ico"><svg><use href="#i-biz"/></svg></div>
+          <h3>Empresarial</h3>
+          <p>Proteção para o seu comércio ou escritório: estrutura, equipamentos, estoque e responsabilidade civil.</p>
+          <ul><li>Patrimônio</li><li>Estoque</li><li>Resp. civil</li></ul>
+          <a href="#cotacao" data-tipo="Empresarial">Cotar empresarial →</a>
+        </article>
+        <article class="svc">
+          <div class="ico"><svg><use href="#i-health"/></svg></div>
+          <h3>Saúde e Odonto</h3>
+          <p>Planos individuais, familiares e empresariais, com orientação sobre rede credenciada e carências.</p>
+          <ul><li>Individual</li><li>Familiar</li><li>PME</li></ul>
+          <a href="#cotacao" data-tipo="Saúde">Cotar plano →</a>
+        </article>
+        <article class="svc">
+          <div class="ico"><svg><use href="#i-plane"/></svg></div>
+          <h3>Viagem</h3>
+          <p>Assistência médica, bagagem e cancelamento para viagens nacionais e internacionais.</p>
+          <ul><li>Despesas médicas</li><li>Bagagem</li><li>Cancelamento</li></ul>
+          <a href="#cotacao" data-tipo="Viagem">Cotar viagem →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4. Sobre ===== -->
+  <section class="block about" id="sobre">
+    <div class="wrap">
+      <div class="about-media">
+        <span class="corner c1"></span><span class="corner c2"></span>
+        <div class="frame"><img src="assets/img/ronay-trajano.webp" alt="Retrato de Ronay Trajano" width="720" height="749" loading="lazy"></div>
+      </div>
+      <div class="about-copy">
+        <p class="eyebrow">Quem cuida do seu seguro</p>
+        <h2>Prazer, eu sou o <span class="gold-text">Ronay Trajano</span>.</h2>
+        <p>Sou corretor de seguros habilitado pela SUSEP e fundador da Trajano Seguros. Meu trabalho é traduzir o contrato de seguro para a sua realidade: entender o que você tem, o que pode dar errado e qual seguradora entrega a melhor proteção pelo preço justo.</p>
+        <p>Você fala comigo do começo ao fim. Na contratação, na renovação e, principalmente, quando acontece um imprevisto e você precisa de alguém que resolva.</p>
+        <blockquote class="quote">“Seguro bom é aquele que você entende antes de precisar.”</blockquote>
+        <div class="susep">
+          <svg><use href="#i-badge"/></svg>
+          <div><b>Corretor licenciado SUSEP</b><span>A SUSEP é a autarquia federal que fiscaliza o mercado de seguros. Você pode consultar o registro de qualquer corretor no <a href="https://www.susep.gov.br" target="_blank" rel="noopener">site da SUSEP</a>.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 5. Como funciona ===== -->
+  <section class="block" id="como-funciona">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Como funciona</p>
+          <h2>Do pedido à apólice, <span class="gold-text">sem complicação</span>.</h2>
+        </div>
+        <p>Você passa as informações uma vez. O trabalho de pesquisar, comparar e negociar fica comigo.</p>
+      </div>
+      <ol class="steps">
+        <li class="step"><div class="n">1</div><h3>Você conta o que precisa</h3><p>Pelo formulário ou WhatsApp, com os dados básicos do bem ou de quem será segurado.</p></li>
+        <li class="step"><div class="n">2</div><h3>Eu comparo as seguradoras</h3><p>Cotação em várias companhias, avaliando coberturas, franquia e assistências.</p></li>
+        <li class="step"><div class="n">3</div><h3>Você escolhe com clareza</h3><p>Apresento as opções lado a lado e explico as diferenças em linguagem simples.</p></li>
+        <li class="step"><div class="n">4</div><h3>Acompanho a apólice</h3><p>Suporte em sinistros, endossos e lembrete antes da renovação para revisar o preço.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== 6. Cotação ===== -->
+  <section class="block quote-sec" id="cotacao">
+    <div class="wrap">
+      <div class="quote-intro">
+        <p class="eyebrow">Cotação gratuita</p>
+        <h2>Peça sua cotação <span class="gold-text">sem compromisso</span>.</h2>
+        <p>Preencha os dados ao lado e a sua mensagem já sai pronta para o WhatsApp. Respondo com as opções o mais rápido possível.</p>
+        <ul class="contact-list">
+          <li><svg><use href="#i-wa"/></svg><div><small>WhatsApp</small><a class="wa-link wa-num" href="#" target="_blank" rel="noopener">(00) 00000-0000</a></div></li>
+          <li><svg><use href="#i-ig"/></svg><div><small>Instagram</small><a class="ig-link" href="#" target="_blank" rel="noopener">@trajanoseguros</a></div></li>
+          <li><svg><use href="#i-clock"/></svg><div><small>Atendimento</small><strong>Segunda a sexta, 8h às 18h · Sábado, 8h às 12h</strong></div></li>
+        </ul>
+      </div>
+
+      <div class="policy">
+        <div class="policy-head">
+          <span class="eyebrow">Proposta de cotação</span>
+          <img src="assets/img/logo.webp" alt="" width="40" height="40">
+        </div>
+
+        <form class="form" id="quote-form" novalidate>
+          <div class="field">
+            <label>Tipo de seguro</label>
+            <div class="chips" role="radiogroup" aria-label="Tipo de seguro">
+              <input type="radio" name="tipo" id="t-auto" value="Auto" checked><label for="t-auto">Auto</label>
+              <input type="radio" name="tipo" id="t-res" value="Residencial"><label for="t-res">Residencial</label>
+              <input type="radio" name="tipo" id="t-vida" value="Vida"><label for="t-vida">Vida</label>
+              <input type="radio" name="tipo" id="t-emp" value="Empresarial"><label for="t-emp">Empresarial</label>
+              <input type="radio" name="tipo" id="t-sau" value="Saúde"><label for="t-sau">Saúde</label>
+              <input type="radio" name="tipo" id="t-via" value="Viagem"><label for="t-via">Viagem</label>
+            </div>
+          </div>
+          <div class="grid2">
+            <div class="field"><label for="f-nome">Nome</label><input id="f-nome" name="nome" autocomplete="name" placeholder="Seu nome completo" required></div>
+            <div class="field"><label for="f-tel">WhatsApp</label><input id="f-tel" name="tel" inputmode="tel" autocomplete="tel" placeholder="(85) 9 0000-0000" required></div>
+          </div>
+          <div class="field" id="campo-detalhe">
+            <label for="f-det" id="l-det">Veículo (marca, modelo e ano)</label>
+            <input id="f-det" name="detalhe" placeholder="Ex.: Onix LT 2023">
+          </div>
+          <div class="field"><label for="f-msg">Observações</label><textarea id="f-msg" name="msg" placeholder="Ex.: já tenho seguro e vence em novembro"></textarea></div>
+          <p class="err" id="f-err" role="alert"></p>
+          <button class="btn btn-gold" type="submit">Gerar mensagem de cotação <svg><use href="#i-arrow"/></svg></button>
+          <p class="form-note">Seus dados são usados apenas para preparar a cotação.</p>
+        </form>
+
+        <div class="result" id="quote-result" hidden>
+          <span class="eyebrow">Mensagem pronta</span>
+          <h3>Agora é só enviar.</h3>
+          <pre id="q-text"></pre>
+          <div class="row">
+            <a class="btn btn-gold" id="q-send" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Enviar no WhatsApp</a>
+            <button class="btn btn-ghost" type="button" id="q-copy">Copiar texto</button>
+            <button class="btn btn-ghost" type="button" id="q-back">Editar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 7. Dúvidas frequentes ===== -->
+  <section class="block" id="duvidas">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Dúvidas frequentes</p>
+          <h2>Antes de contratar, <span class="gold-text">entenda</span>.</h2>
+        </div>
+        <p>Respostas diretas para as perguntas que mais recebo.</p>
+      </div>
+      <div class="faq">
+        <details open><summary>Contratar com corretor sai mais caro?</summary><p>Não. A remuneração do corretor é uma comissão paga pela seguradora e já está incluída no preço do seguro, o mesmo valor que você pagaria contratando direto. A diferença é que, com corretor, você recebe várias opções comparadas e tem alguém do seu lado no sinistro.</p></details>
+        <details><summary>O que é franquia no seguro auto?</summary><p>É a parte do prejuízo que fica por sua conta em caso de dano parcial ao veículo. Franquia mais baixa deixa o seguro um pouco mais caro, e franquia mais alta reduz o preço. Eu mostro as duas simulações para você decidir.</p></details>
+        <details><summary>O que acontece se eu bater o carro?</summary><p>Você me chama primeiro. Eu oriento o que fazer no local, abro o aviso de sinistro na seguradora, indico a documentação e acompanho a vistoria e o reparo até o carro voltar para você.</p></details>
+        <details><summary>Posso trocar de seguradora na renovação?</summary><p>Pode, e mantém a classe de bônus conquistada nos anos sem sinistro. Antes de cada renovação eu refaço a cotação no mercado para conferir se continua valendo a pena.</p></details>
+        <details><summary>Como sei que o corretor é habilitado?</summary><p>Todo corretor precisa ter registro ativo na SUSEP. A consulta é pública e gratuita no site oficial da SUSEP, pelo nome ou CPF do profissional.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===== Rodapé ===== -->
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="brand" href="#inicio"><img src="assets/img/logo.webp" alt="" width="64" height="64"><span>Trajano Seguros</span></a>
+      <p>Transparência, cuidado e proteção para você e o seu bem.</p>
+    </div>
+    <div>
+      <h4>Seguros</h4>
+      <ul><li><a href="#seguros">Auto</a></li><li><a href="#seguros">Residencial</a></li><li><a href="#seguros">Vida</a></li><li><a href="#seguros">Empresarial</a></li></ul>
+    </div>
+    <div>
+      <h4>Contato</h4>
+      <ul><li><a class="wa-link" href="#" target="_blank" rel="noopener">WhatsApp</a></li><li><a class="ig-link" href="#" target="_blank" rel="noopener">Instagram</a></li><li><a href="#cotacao">Pedir cotação</a></li></ul>
+    </div>
+    <div class="legal">
+      <span>© <span id="ano">2026</span> Trajano Seguros · Ronay Trajano, corretor de seguros licenciado SUSEP</span>
+      <span>O seguro é garantido pela seguradora emissora da apólice.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== Botão flutuante do WhatsApp ===== -->
+<a class="wa-float wa-link" href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg><use href="#i-wa"/></svg></a>
+
+</body>
+</html>
