@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /admin.html
 
-Sitemap: https://altaimpactoprojetos-blip.github.io/trajanoseguros/sitemap.xml
+Sitemap: https://www.trajanoseguros.online/sitemap.xml
