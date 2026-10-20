@@ -63,9 +63,9 @@ Projeto **CRM Vitalício** (`lffzxqwgqgsiumunahyt`), arquivo `supabase/migration
 
 ## Publicação (GitHub Pages)
 
-Settings → Pages → *Deploy from a branch* → branch `main`, pasta `/ (root)`.
+Settings → Pages → *Deploy from a branch* → branch `main`, pasta `/ (root)`. Domínio: `www.trajanoseguros.online` (arquivo `CNAME`; DNS na Hostinger com 4 registros A para o GitHub e CNAME `www`).
 Os endereços em `index.html` (canonical, Open Graph, JSON-LD), `sitemap.xml`, `robots.txt` e `404.html`
-usam `https://altaimpactoprojetos-blip.github.io/trajanoseguros/`. Se houver domínio próprio, troque nesses arquivos
+usam `https://www.trajanoseguros.online/`. Se houver domínio próprio, troque nesses arquivos
 e crie o arquivo `CNAME`.
 
 ## Depoimentos
