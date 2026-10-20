@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Painel de cotações · Trajano Seguros</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src https://lffzxqwgqgsiumunahyt.supabase.co; base-uri 'self'; object-src 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#07080c">
+  <link rel="icon" href="favicon-32.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Manrope:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/admin.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.1/dist/umd/supabase.min.js" defer></script>
+  <script src="assets/js/config.js" defer></script>
+  <script src="assets/js/admin.js" defer></script>
+</head>
+<body>
+<header class="header">
+  <div class="wrap header-inner">
+    <a class="brand" href="./">
+      <img src="assets/img/brasao-96.webp" alt="" width="48" height="48">
+      <span class="brand-name">Painel de <b>cotações</b></span>
+    </a>
+    <button class="btn btn-outline btn-sm" id="sair" type="button" hidden>Sair</button>
+  </div>
+</header>
+
+<main class="wrap admin">
+  <!-- Login -->
+  <section class="login" id="tela-login" hidden>
+    <h1>Entrar</h1>
+    <p>Acesso restrito à equipe da Trajano Seguros.</p>
+    <form id="form-login" class="form">
+      <div class="field"><label class="label" for="l-email">E-mail</label><input id="l-email" type="email" autocomplete="username" required></div>
+      <div class="field"><label class="label" for="l-senha">Senha</label><input id="l-senha" type="password" autocomplete="current-password" required></div>
+      <p class="form-error" id="l-erro" role="alert"></p>
+      <button class="btn btn-gold btn-block" type="submit" id="l-botao">Entrar</button>
+    </form>
+  </section>
+
+  <!-- Lista -->
+  <section id="tela-lista" hidden>
+    <div class="admin-top">
+      <div>
+        <h1>Solicitações de cotação</h1>
+        <p class="admin-resumo" id="resumo" aria-live="polite"></p>
+      </div>
+      <div class="admin-tools">
+        <button class="btn btn-outline btn-sm" type="button" id="atualizar">Atualizar</button>
+        <button class="btn btn-outline btn-sm" type="button" id="csv">Baixar CSV</button>
+      </div>
+    </div>
+    <div class="admin-filtros">
+      <label class="field"><span class="label">Buscar</span><input id="busca" type="search" placeholder="Nome, telefone ou protocolo"></label>
+      <label class="field"><span class="label">Status</span>
+        <select id="filtro-status"><option value="">Todos</option></select></label>
+      <label class="field"><span class="label">Seguro</span>
+        <select id="filtro-tipo"><option value="">Todos</option><option>Auto</option><option>Residencial</option><option>Vida</option><option>Empresarial</option></select></label>
+    </div>
+    <p class="form-error" id="lista-erro" role="alert"></p>
+    <ol class="cotacoes" id="lista"></ol>
+  </section>
+
+  <section class="login" id="tela-sem-acesso" hidden>
+    <h1>Sem acesso</h1>
+    <p>Este usuário entrou, mas não está autorizado a ver as cotações. Peça ao administrador para incluir o seu e-mail na lista de acesso.</p>
+  </section>
+</main>
+
+<template id="tpl-cotacao">
+  <li class="cotacao">
+    <div class="cot-head">
+      <span class="cot-proto"></span>
+      <span class="cot-tipo"></span>
+      <time class="cot-data"></time>
+    </div>
+    <h2 class="cot-nome"></h2>
+    <p class="cot-contato"><a class="cot-tel" target="_blank" rel="noopener noreferrer"></a><a class="cot-email"></a></p>
+    <dl class="cot-detalhes"></dl>
+    <p class="cot-obs"></p>
+    <div class="cot-acoes">
+      <label class="field"><span class="label">Status</span><select class="cot-status"></select></label>
+      <label class="field cot-notas-campo"><span class="label">Notas internas</span><textarea class="cot-notas" rows="2" maxlength="4000"></textarea></label>
+      <button class="btn btn-outline btn-sm cot-salvar" type="button">Salvar</button>
+    </div>
+  </li>
+</template>
+</body>
+</html>
