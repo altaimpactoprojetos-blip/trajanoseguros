@@ -15,7 +15,7 @@ window.TRAJANO = {
   razaoSocial: "",         // Nome empresarial que consta no CNPJ
   cnpj: "",                // Ex.: "00.000.000/0001-00"
   endereco: "",            // Endereço comercial completo
-  susep: "",               // Número de registro do corretor/corretora na SUSEP
+  susep: "251172774",      // Número de registro do corretor/corretora na SUSEP
 
   // Backend das cotações (Supabase — projeto CRM Vitalício).
   // A chave abaixo é PÚBLICA (publishable): só permite chamar a função de cotação.
