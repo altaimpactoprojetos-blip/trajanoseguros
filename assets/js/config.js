@@ -13,7 +13,7 @@ window.TRAJANO = {
 
   // Dados cadastrais
   razaoSocial: "",         // Nome empresarial que consta no CNPJ
-  cnpj: "",                // Ex.: "00.000.000/0001-00"
+  cnpj: "61.814.373/0001-90", // Ex.: "00.000.000/0001-00"
   endereco: "",            // Endereço comercial completo
   susep: "251172774",      // Número de registro do corretor/corretora na SUSEP
 
