@@ -54,6 +54,12 @@ Projeto **CRM Vitalício** (`lffzxqwgqgsiumunahyt`), arquivo `supabase/migration
 - Coluna `cpf` (validada com `trajano_cpf_valido`, dígitos verificadores) — `supabase/migrations/20261021_trajano_cotacoes_cpf.sql`.
 - Tabela `trajano_cotacoes` com RLS: só e-mails cadastrados em `trajano_cotacoes_admins` (com login) leem e mudam status/notas.
 
+### Aviso por e-mail a cada cotação
+
+Gatilho `trg_trajano_notificar_cotacao` → Edge Function `notificar-cotacao` (`supabase/functions/notificar-cotacao/index.ts`) → API da Brevo → e-mail para
+`trajanoseguros@yahoo.com` (segredo `TRAJANO_NOTIFY_EMAIL` no Vault) com todos os dados e botões "Chamar no WhatsApp" e "Abrir o painel".
+Remetente: `NOTIFY_FROM_EMAIL` (endereço já verificado na Brevo). SQL em `supabase/migrations/20261021_trajano_notificar_cotacao.sql`.
+
 ### Liberar o painel `admin.html` para o corretor
 
 1. Supabase → Authentication → Users → **Add user** (e-mail e senha do corretor). Usuário já criado: `trajanoseguros@yahoo.com`.
