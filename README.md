@@ -38,6 +38,7 @@ Nada foi inventado: enquanto um campo estiver vazio, o item correspondente fica 
 | `email` | contato, rodapé, Aviso de Privacidade (canal para pedidos LGPD) |
 | `instagram`, `horario`, `endereco` | contato e rodapé |
 | `razaoSocial`, `cnpj`, `susep` | rodapé, seção Sobre e Aviso de Privacidade |
+| `regiaoAtendimento`, `experiencia` | credenciais da seção Sobre (ícone de localização e de calendário) |
 
 Sem número de WhatsApp, os botões de WhatsApp levam ao formulário e os atalhos ficam ocultos.
 

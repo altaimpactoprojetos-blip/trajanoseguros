@@ -17,6 +17,10 @@ window.TRAJANO = {
   endereco: "",            // Endereço comercial completo
   susep: "251172774",      // Número de registro do corretor/corretora na SUSEP
 
+  // Seção "Sobre nós" (aparecem só quando preenchidos)
+  regiaoAtendimento: "",   // Ex.: "Atendimento em Fortaleza e todo o Ceará"
+  experiencia: "",         // Ex.: "Mais de 10 anos no mercado de seguros"
+
   // Backend das cotações (Supabase — projeto CRM Vitalício).
   // A chave abaixo é PÚBLICA (publishable): só permite chamar a função de cotação.
   supabaseUrl: "https://lffzxqwgqgsiumunahyt.supabase.co",
