@@ -176,6 +176,7 @@ section[id],main [id]{scroll-margin-top:calc(var(--header-h) + 8px)}
 .step-n{position:absolute;top:-.85rem;left:0;padding-right:.7rem;font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1;font-family:var(--f-display);font-size:1.15rem;font-weight:600;color:var(--gold);letter-spacing:.05em;line-height:1.5}
 .step svg{width:30px;height:30px;color:var(--gold-soft);margin-bottom:1rem}
 .step h3{font-size:1.4rem;line-height:1.15;margin-bottom:.5rem}
+@media (min-width:561px){.step h3{min-height:calc(1.4rem * 1.15 * 2)}}
 
 .step p{color:var(--muted);font-size:.93rem}
 @media (max-width:960px){.steps{grid-template-columns:1fr 1fr;gap:2.6rem 2rem}}
