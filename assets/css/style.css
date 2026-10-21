@@ -274,6 +274,9 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold);bo
 .chips label:hover{border-color:var(--line)}
 .chips input:checked + label{border-color:var(--gold);background:rgba(212,162,76,.12);color:var(--gold-soft)}
 .chips input:focus-visible + label{outline:2px solid var(--gold-soft);outline-offset:2px}
+.form-step{display:flex;align-items:center;gap:.6rem;font-size:.76rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:-.3rem}
+.form-step span{width:24px;height:24px;border-radius:50%;border:1px solid var(--gold-dim);display:grid;place-items:center;font-size:.72rem;color:var(--gold-soft)}
+.form-sep{border:0;border-top:1px solid var(--line-soft);margin:.3rem 0 0}
 .hp{position:absolute!important;left:-10000px;width:1px;height:1px;overflow:hidden}
 .consent{display:flex;gap:.75rem;align-items:flex-start;font-size:.88rem;color:var(--muted);cursor:pointer;line-height:1.5}
 .consent input{flex:none;width:22px;height:22px;margin:.05rem 0 0;accent-color:var(--gold);cursor:pointer}

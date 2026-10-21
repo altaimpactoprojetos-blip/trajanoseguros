@@ -34,7 +34,7 @@ Nada foi inventado: enquanto um campo estiver vazio, o item correspondente fica 
 
 | Campo | Onde aparece |
 |---|---|
-| `whatsapp` / `telefoneExibicao` | botão flutuante, "Falar com um especialista", atalhos dos cards, "Continuar pelo WhatsApp" após a cotação, rodapé |
+| `whatsapp` / `telefoneExibicao` (já preenchido: (85) 98676-8338) | botão flutuante, "Falar com um especialista", atalhos dos cards, "Continuar pelo WhatsApp" após a cotação, rodapé |
 | `email` | contato, rodapé, Aviso de Privacidade (canal para pedidos LGPD) |
 | `instagram`, `horario`, `endereco` | contato e rodapé |
 | `razaoSocial`, `cnpj`, `susep` | rodapé, seção Sobre e Aviso de Privacidade |
@@ -50,6 +50,7 @@ Projeto **CRM Vitalício** (`lffzxqwgqgsiumunahyt`), arquivo `supabase/migration
   guarda só os campos previstos para cada produto, registra a ciência do Aviso de Privacidade e devolve o número do protocolo.
 - Anti-abuso: envio repetido do mesmo telefone/produto em 10 min devolve o mesmo protocolo; no máximo 5 por telefone por dia
   e 30 no site a cada 10 min; campo-armadilha contra robôs no formulário.
+- Coluna `cpf` (validada com `trajano_cpf_valido`, dígitos verificadores) — `supabase/migrations/20261021_trajano_cotacoes_cpf.sql`.
 - Tabela `trajano_cotacoes` com RLS: só e-mails cadastrados em `trajano_cotacoes_admins` (com login) leem e mudam status/notas.
 
 ### Liberar o painel `admin.html` para o corretor
