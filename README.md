@@ -35,7 +35,7 @@ Nada foi inventado: enquanto um campo estiver vazio, o item correspondente fica 
 | Campo | Onde aparece |
 |---|---|
 | `whatsapp` / `telefoneExibicao` (já preenchido: (85) 98676-8338) | botão flutuante, "Falar com um especialista", atalhos dos cards, "Continuar pelo WhatsApp" após a cotação, rodapé |
-| `email` | contato, rodapé, Aviso de Privacidade (canal para pedidos LGPD) |
+| `email` (já preenchido: trajanoseguros@yahoo.com) | contato, rodapé, Aviso de Privacidade (canal para pedidos LGPD) |
 | `instagram`, `horario`, `endereco` | contato e rodapé |
 | `razaoSocial`, `cnpj`, `susep` | rodapé, seção Sobre e Aviso de Privacidade |
 | `regiaoAtendimento`, `experiencia` | credenciais da seção Sobre (ícone de localização e de calendário) |
@@ -56,7 +56,7 @@ Projeto **CRM Vitalício** (`lffzxqwgqgsiumunahyt`), arquivo `supabase/migration
 
 ### Liberar o painel `admin.html` para o corretor
 
-1. Supabase → Authentication → Users → **Add user** (e-mail e senha do corretor). Usuário já criado: `solysprojetos@gmail.com`.
+1. Supabase → Authentication → Users → **Add user** (e-mail e senha do corretor). Usuário já criado: `trajanoseguros@yahoo.com`.
 2. SQL Editor:
    ```sql
    insert into public.trajano_cotacoes_admins (email) values ('email-do-corretor@dominio.com');

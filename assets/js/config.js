@@ -7,7 +7,7 @@ window.TRAJANO = {
   // Contato comercial
   whatsapp: "5585986768338", // DDI + DDD + número, só dígitos
   telefoneExibicao: "(85) 98676-8338", // Como o número aparece no site
-  email: "",               // E-mail comercial e para pedidos sobre dados pessoais (LGPD)
+  email: "trajanoseguros@yahoo.com", // E-mail comercial e para pedidos sobre dados pessoais (LGPD)
   instagram: "",           // Só o usuário, sem @. Ex.: "trajanoseguros"
   horario: "",             // Ex.: "Segunda a sexta, das 8h às 18h"
 
