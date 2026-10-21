@@ -61,7 +61,7 @@ Projeto **CRM Vitalício** (`lffzxqwgqgsiumunahyt`), arquivo `supabase/migration
    ```sql
    insert into public.trajano_cotacoes_admins (email) values ('email-do-corretor@dominio.com');
    ```
-3. Acessar `…/admin.html`, entrar e acompanhar as solicitações (status, notas, WhatsApp do cliente, CSV).
+3. Acessar `…/admin.html`, entrar e acompanhar as solicitações: chips por status, busca, filtros e ordenação, cards compactos com "Ver detalhes", "Chamar no WhatsApp" (passa Nova → Em andamento), CPF mascarado com revelar/copiar, status e notas salvos automaticamente, exclusão com confirmação, CSV dos itens filtrados. Sessão expira após 30 min sem atividade.
 
 ## Publicação (GitHub Pages)
 

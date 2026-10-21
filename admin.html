@@ -19,6 +19,14 @@
   <script src="assets/js/admin.js" defer></script>
 </head>
 <body>
+<svg width="0" height="0" class="sprite" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm5.8 14.01c-.24.68-1.41 1.3-1.95 1.38-.5.07-1.13.1-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.29.58-.36.78-.36h.56c.18 0 .42-.07.66.5.24.58.82 2.01.89 2.16.07.14.12.31.02.5-.1.19-.14.31-.29.48-.14.17-.3.38-.43.51-.14.14-.29.3-.13.59.17.29.74 1.22 1.59 1.97 1.09.97 2.01 1.27 2.3 1.42.29.14.46.12.63-.07.17-.19.72-.84.92-1.13.19-.29.38-.24.65-.14.26.1 1.68.79 1.97.94.29.14.48.22.55.34.07.12.07.7-.17 1.38Z"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M9 9.5h10v10H9zM5 14.5v-10h10"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></symbol>
+  </defs>
+</svg>
+
 <header class="header">
   <div class="wrap header-inner">
     <a class="brand" href="./">
@@ -45,23 +53,24 @@
   <!-- Lista -->
   <section id="tela-lista" hidden>
     <div class="admin-top">
-      <div>
-        <h1>Solicitações de cotação</h1>
-        <p class="admin-resumo" id="resumo" aria-live="polite"></p>
-      </div>
+      <h1>Solicitações de cotação</h1>
       <div class="admin-tools">
         <button class="btn btn-outline btn-sm" type="button" id="atualizar">Atualizar</button>
         <button class="btn btn-outline btn-sm" type="button" id="csv">Baixar CSV</button>
       </div>
     </div>
+    <div class="chips-status" id="chips" role="group" aria-label="Filtrar por status"></div>
     <div class="admin-filtros">
       <label class="field"><span class="label">Buscar</span><input id="busca" type="search" placeholder="Nome, telefone ou protocolo"></label>
       <label class="field"><span class="label">Status</span>
         <select id="filtro-status"><option value="">Todos</option></select></label>
       <label class="field"><span class="label">Seguro</span>
         <select id="filtro-tipo"><option value="">Todos</option><option>Auto</option><option>Residencial</option><option>Vida</option><option>Empresarial</option></select></label>
+      <label class="field"><span class="label">Ordenar</span>
+        <select id="ordem"><option value="recentes">Mais recentes</option><option value="antigas">Mais antigas</option></select></label>
     </div>
     <p class="form-error" id="lista-erro" role="alert"></p>
+    <p class="admin-vazio" id="vazio" hidden>Nenhuma solicitação com esses filtros.</p>
     <ol class="cotacoes" id="lista"></ol>
   </section>
 
@@ -71,21 +80,57 @@
   </section>
 </main>
 
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<!-- Confirmação de exclusão -->
+<div class="modal" id="modal" hidden>
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+    <h2 id="modal-titulo">Excluir esta solicitação?</h2>
+    <p>Os dados serão removidos permanentemente.</p>
+    <div class="modal-acoes">
+      <button class="btn btn-outline btn-sm" type="button" id="modal-cancelar">Cancelar</button>
+      <button class="btn btn-sm btn-danger" type="button" id="modal-excluir">Excluir</button>
+    </div>
+  </div>
+</div>
+
 <template id="tpl-cotacao">
   <li class="cotacao">
     <div class="cot-head">
       <span class="cot-proto"></span>
       <span class="cot-tipo"></span>
+      <span class="badge cot-status-badge"></span>
       <time class="cot-data"></time>
     </div>
     <h2 class="cot-nome"></h2>
-    <p class="cot-contato"><a class="cot-tel" target="_blank" rel="noopener noreferrer"></a><span class="cot-cpf"></span><a class="cot-email"></a></p>
-    <dl class="cot-detalhes"></dl>
-    <p class="cot-obs"></p>
-    <div class="cot-acoes">
-      <label class="field"><span class="label">Status</span><select class="cot-status"></select></label>
-      <label class="field cot-notas-campo"><span class="label">Notas internas</span><textarea class="cot-notas" rows="2" maxlength="4000"></textarea></label>
-      <button class="btn btn-outline btn-sm cot-salvar" type="button">Salvar</button>
+    <p class="cot-tel-linha"><a class="cot-tel"></a></p>
+    <div class="cot-acoes-rapidas">
+      <a class="btn btn-gold btn-sm cot-wa" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-wa"/></svg>Chamar no WhatsApp</a>
+      <button class="btn btn-outline btn-sm cot-toggle" type="button" aria-expanded="false">Ver detalhes <svg aria-hidden="true"><use href="#i-chev"/></svg></button>
+    </div>
+
+    <div class="cot-detalhes-area" hidden>
+      <h3 class="cot-sub">Dados do seguro</h3>
+      <dl class="cot-detalhes"></dl>
+
+      <h3 class="cot-sub">Contato</h3>
+      <dl class="cot-contato-lista">
+        <div><dt>WhatsApp</dt><dd><span class="cot-tel-txt"></span><button class="mini cot-copiar-tel" type="button" title="Copiar telefone"><svg aria-hidden="true"><use href="#i-copy"/></svg></button></dd></div>
+        <div><dt>E-mail</dt><dd><a class="cot-email"></a><button class="mini cot-copiar-email" type="button" title="Copiar e-mail" hidden><svg aria-hidden="true"><use href="#i-copy"/></svg></button></dd></div>
+        <div><dt>CPF</dt><dd><span class="cot-cpf"></span><button class="mini mini-txt cot-revelar" type="button" hidden>Revelar</button><button class="mini cot-copiar-cpf" type="button" title="Copiar CPF" hidden><svg aria-hidden="true"><use href="#i-copy"/></svg></button></dd></div>
+      </dl>
+
+      <h3 class="cot-sub">Mensagem do cliente</h3>
+      <p class="cot-obs"></p>
+
+      <div class="cot-acoes">
+        <label class="field"><span class="label">Status</span><select class="cot-status"></select></label>
+        <label class="field cot-notas-campo"><span class="label">Notas internas</span><textarea class="cot-notas" rows="2" maxlength="4000" placeholder="Anotações só para a equipe"></textarea></label>
+        <div class="cot-botoes">
+          <button class="btn btn-outline btn-sm cot-salvar" type="button">Salvar</button>
+          <button class="link-danger cot-excluir" type="button">Excluir</button>
+        </div>
+      </div>
     </div>
   </li>
 </template>
