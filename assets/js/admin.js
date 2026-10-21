@@ -8,7 +8,7 @@
   var $ = function (id) { return document.getElementById(id); };
 
   var STATUS = { nova: "Nova", em_atendimento: "Em atendimento", proposta_enviada: "Proposta enviada", fechada: "Fechada", arquivada: "Arquivada" };
-  var ROTULOS = { veiculo: "Veículo", ano: "Ano", uso: "Uso", cep: "CEP", imovel: "Imóvel", ocupacao: "Ocupação", cidade: "Cidade", idade: "Idade", profissao: "Profissão", atividade: "Atividade" };
+  var ROTULOS = { veiculo: "Veículo", ano: "Ano", uso: "Uso", cep: "CEP", imovel: "Imóvel", ocupacao: "Ocupação", cidade: "Cidade", idade: "Idade", profissao: "Profissão", atividade: "Atividade", tem_seguro: "Já tem seguro" };
   var cotacoes = [];
 
   Object.keys(STATUS).forEach(function (k) { $("filtro-status").add(new Option(STATUS[k], k)); });

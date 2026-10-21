@@ -170,6 +170,15 @@
   aplicarMascara($("#f-tel"), mascaraTelefone);
   aplicarMascara($("#f-cpf"), mascaraCpf);
   aplicarMascara($("#f-cep"), mascaraCep);
+
+  // "Já tem seguro?": dica aparece com "Sim"
+  $$('input[name="tem_seguro"]', form).forEach(function (r) {
+    r.addEventListener("change", function () { $("#ts-dica").hidden = !$("#ts-sim").checked; });
+  });
+
+  // Selects: "Selecione" em cinza, como os placeholders
+  function corSelect(s) { s.classList.toggle("is-placeholder", !s.value); }
+  $$("select", form).forEach(function (s) { corSelect(s); s.addEventListener("change", function () { corSelect(s); }); });
   aplicarMascara($("#f-ano"), function (v) { return digitos(v).slice(0, 4); });
   aplicarMascara($("#f-idade"), function (v) { return digitos(v).slice(0, 3); });
 
@@ -191,7 +200,7 @@
     },
     email: function (v) { return !v.trim() || /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v.trim()) ? "" : "Confira o e-mail informado."; },
     veiculo: function (v) { return v.trim() ? "" : "Informe a marca e o modelo do veículo."; },
-    ano: function (v) { var n = +v; return /^\d{4}$/.test(v) && n >= 1950 && n <= anoMax ? "" : "Informe o ano do modelo com 4 dígitos."; },
+    ano: function (v) { var n = +v; return /^\d{4}$/.test(v) && n >= 1980 && n <= anoMax ? "" : "Informe o ano do modelo entre 1980 e " + anoMax + "."; },
     cep: function (v) { return !v || digitos(v).length === 8 ? "" : "Confira o CEP (8 dígitos)."; },
     imovel: function (v) { return v ? "" : "Selecione o tipo de imóvel."; },
     ocupacao: function (v) { return v ? "" : "Selecione se o imóvel é próprio, alugado ou de veraneio."; },
@@ -256,12 +265,12 @@
 
   var rotulosDetalhes = {
     veiculo: "Veículo", ano: "Ano", uso: "Uso", cep: "CEP", imovel: "Imóvel", ocupacao: "Ocupação",
-    cidade: "Cidade", idade: "Idade", profissao: "Profissão", atividade: "Atividade", cpf: "CPF"
+    cidade: "Cidade", idade: "Idade", profissao: "Profissão", atividade: "Atividade", cpf: "CPF", tem_seguro: "Já tem seguro"
   };
   function coletarDados() {
     var tipo = tipoAtual(), detalhes = {};
     var grupo = $('[data-grupo="' + tipo + '"]', form);
-    $$("input, select", grupo).forEach(function (c) { if (c.value.trim()) detalhes[c.name] = c.value.trim(); });
+    $$("input, select", grupo).forEach(function (c) { if (c.type === "radio" && !c.checked) return; if (c.value.trim()) detalhes[c.name] = c.value.trim(); });
     detalhes.cpf = mascaraCpf(form.cpf.value); // vai junto com os detalhes; o servidor guarda na coluna própria
     return {
       tipo: tipo,
@@ -302,6 +311,8 @@
     var r = $('input[name="tipo"][value="' + (interesse || "Auto") + '"]', form);
     if (r) r.checked = true;
     setTipo(tipoAtual());
+    $("#ts-dica").hidden = true;
+    $$("select", form).forEach(corSelect);
     ok.hidden = true;
     form.hidden = false;
   }

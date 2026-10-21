@@ -247,6 +247,7 @@ fieldset{margin:0;padding:0;border:0;min-width:0}
 input:not([type="radio"]):not([type="checkbox"]),select,textarea{width:100%;min-height:50px;padding:.75rem .95rem;background:var(--ink-3);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);font-size:1rem;color:var(--text);transition:border-color .2s,box-shadow .2s;appearance:none;-webkit-appearance:none}
 select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e8c98a' stroke-width='1.8' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .8rem center;background-size:18px;padding-right:2.5rem}
 select option{background:var(--ink-3);color:var(--text)}
+select.is-placeholder{color:#777164}
 textarea{resize:vertical;min-height:96px;line-height:1.5}
 input::placeholder,textarea::placeholder{color:#777164}
 input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,162,76,.18)}
@@ -260,6 +261,8 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold);bo
 .chips label:hover{border-color:var(--line)}
 .chips input:checked + label{border-color:var(--gold);background:rgba(212,162,76,.12);color:var(--gold-soft)}
 .chips input:focus-visible + label{outline:2px solid var(--gold-soft);outline-offset:2px}
+.chips-sm{grid-template-columns:repeat(2,minmax(0,140px));gap:.5rem}
+.chips-sm label{padding:.6rem .8rem;font-size:.9rem}
 .form-step{display:flex;align-items:center;gap:.6rem;font-size:.76rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:-.3rem}
 .form-step span{width:24px;height:24px;border-radius:50%;border:1px solid var(--gold-dim);display:grid;place-items:center;font-size:.72rem;color:var(--gold-soft)}
 .form-sep{border:0;margin:.3rem 0 0}
