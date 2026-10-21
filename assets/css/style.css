@@ -32,7 +32,8 @@
 /* ===== Base ===== */
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--ink);color:var(--text);font-family:var(--f-body);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{margin:0;background:var(--ink);position:relative;color:var(--text);font-family:var(--f-body);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse 48% 55% at 6% 28%,rgba(10,42,138,.32),transparent 68%)}
 img,svg{display:block;max-width:100%}
 a{color:inherit}
 h1,h2,h3{margin:0;font-family:var(--f-display);font-weight:600;line-height:1.08;letter-spacing:-.01em;text-wrap:balance}
@@ -140,7 +141,7 @@ section[id],main [id]{scroll-margin-top:calc(var(--header-h) + 8px)}
 
 /* ===== Seções ===== */
 .section{padding-block:clamp(4.5rem,9vw,7rem)}
-.section-alt{background:var(--ink)}
+.section-alt{background:transparent}
 .section-head{max-width:46rem;margin-bottom:clamp(2.4rem,5vw,3.6rem)}
 .section-head h2{font-size:clamp(2.1rem,4.2vw,3.3rem);margin:.8rem 0 1rem}
 .section-head p:not(.eyebrow){color:var(--muted);font-size:1.02rem}
@@ -202,7 +203,7 @@ section[id],main [id]{scroll-margin-top:calc(var(--header-h) + 8px)}
 @media (max-width:860px){.about{grid-template-columns:1fr}.about-media{max-width:400px}}
 
 /* ===== Diferenciais ===== */
-.section-navy{background:var(--ink)}
+.section-navy{background:transparent}
 
 .features{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem 2.5rem}
 .features li{padding:1.8rem 1.6rem;min-width:0;background:var(--ink-2);border:1px solid var(--line-soft);border-radius:var(--radius)}
@@ -220,7 +221,7 @@ section[id],main [id]{scroll-margin-top:calc(var(--header-h) + 8px)}
 .testimonial figcaption span{font-size:.85rem;color:var(--muted)}
 
 /* ===== Cotação ===== */
-.quote-section{background:var(--ink)}
+.quote-section{background:transparent}
 .quote-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2.5rem,6vw,5rem);align-items:start}
 .quote-intro{min-width:0}
 .quote-intro h2{font-size:clamp(2.1rem,4.2vw,3.3rem);margin:.8rem 0 1.1rem}
@@ -307,7 +308,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold);bo
 @media (max-width:860px){.faq-grid{grid-template-columns:1fr}.faq-grid .section-head{position:static}.faq summary{font-size:1.22rem}}
 
 /* ===== Rodapé ===== */
-.footer{background:var(--ink)}
+.footer{background:transparent}
 .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2.5rem;padding-block:4rem 2rem}
 .footer-brand .brand img{width:64px;height:64px}
 .footer-brand p{color:var(--muted);font-size:.92rem;margin-top:1.1rem;max-width:22rem}
