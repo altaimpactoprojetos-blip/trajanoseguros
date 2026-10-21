@@ -5,8 +5,8 @@
    ========================================================================== */
 window.TRAJANO = {
   // Contato comercial
-  whatsapp: "",            // DDI + DDD + número, só dígitos. Ex.: "5585999999999"
-  telefoneExibicao: "",    // Como o número aparece no site. Ex.: "(85) 9 9999-9999"
+  whatsapp: "5585986768338", // DDI + DDD + número, só dígitos
+  telefoneExibicao: "(85) 98676-8338", // Como o número aparece no site
   email: "",               // E-mail comercial e para pedidos sobre dados pessoais (LGPD)
   instagram: "",           // Só o usuário, sem @. Ex.: "trajanoseguros"
   horario: "",             // Ex.: "Segunda a sexta, das 8h às 18h"
@@ -23,5 +23,5 @@ window.TRAJANO = {
   supabaseKey: "sb_publishable_ckFnucj9hoCwIbdX9HMC_A_XT006uDI",
 
   // Versão do Aviso de Privacidade (mude ao alterar privacidade.html)
-  avisoPrivacidadeVersao: "2026-10-20"
+  avisoPrivacidadeVersao: "2026-10-21"
 };

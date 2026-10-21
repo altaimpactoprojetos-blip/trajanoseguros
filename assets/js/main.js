@@ -139,11 +139,27 @@
     if (d.length <= 10) return "(" + d.slice(0, 2) + ") " + d.slice(2, 6) + "-" + d.slice(6);
     return "(" + d.slice(0, 2) + ") " + d.slice(2, 7) + "-" + d.slice(7);
   }
+  function mascaraCpf(v) {
+    var d = digitos(v).slice(0, 11);
+    return d.replace(/^(\d{3})(\d)/, "$1.$2").replace(/^(\d{3})\.(\d{3})(\d)/, "$1.$2.$3").replace(/^(\d{3})\.(\d{3})\.(\d{3})(\d)/, "$1.$2.$3-$4");
+  }
+  function cpfValido(v) {
+    var d = digitos(v);
+    if (d.length !== 11 || /^(\d)\1{10}$/.test(d)) return false;
+    for (var n = 9; n <= 10; n++) {
+      var s = 0;
+      for (var i = 0; i < n; i++) s += +d[i] * (n + 1 - i);
+      var r = (s * 10) % 11; if (r === 10) r = 0;
+      if (r !== +d[n]) return false;
+    }
+    return true;
+  }
   function mascaraCep(v) { var d = digitos(v).slice(0, 8); return d.length > 5 ? d.slice(0, 5) + "-" + d.slice(5) : d; }
   function aplicarMascara(el, fn) {
     el.addEventListener("input", function () { el.value = fn(el.value); });
   }
   aplicarMascara($("#f-tel"), mascaraTelefone);
+  aplicarMascara($("#f-cpf"), mascaraCpf);
   aplicarMascara($("#f-cep"), mascaraCep);
   aplicarMascara($("#f-ano"), function (v) { return digitos(v).slice(0, 4); });
   aplicarMascara($("#f-idade"), function (v) { return digitos(v).slice(0, 3); });
@@ -158,6 +174,11 @@
       if (!/^[1-9][0-9]\d{8,9}$/.test(d)) return "Informe o telefone com DDD, por exemplo (85) 99999-9999.";
       if (d.length === 11 && d[2] !== "9") return "Confira o número de celular: depois do DDD ele começa com 9.";
       return "";
+    },
+    cpf: function (v) {
+      var d = digitos(v);
+      if (!d) return "Informe o seu CPF.";
+      return cpfValido(d) ? "" : "Confira o CPF: os dígitos não conferem.";
     },
     email: function (v) { return !v.trim() || /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v.trim()) ? "" : "Confira o e-mail informado."; },
     veiculo: function (v) { return v.trim() ? "" : "Informe a marca e o modelo do veículo."; },
@@ -226,12 +247,13 @@
 
   var rotulosDetalhes = {
     veiculo: "Veículo", ano: "Ano", uso: "Uso", cep: "CEP", imovel: "Imóvel", ocupacao: "Ocupação",
-    cidade: "Cidade", idade: "Idade", profissao: "Profissão", atividade: "Atividade"
+    cidade: "Cidade", idade: "Idade", profissao: "Profissão", atividade: "Atividade", cpf: "CPF"
   };
   function coletarDados() {
     var tipo = tipoAtual(), detalhes = {};
     var grupo = $('[data-grupo="' + tipo + '"]', form);
     $$("input, select", grupo).forEach(function (c) { if (c.value.trim()) detalhes[c.name] = c.value.trim(); });
+    detalhes.cpf = mascaraCpf(form.cpf.value); // vai junto com os detalhes; o servidor guarda na coluna própria
     return {
       tipo: tipo,
       nome: form.nome.value.trim().replace(/\s+/g, " "),
@@ -243,7 +265,10 @@
   }
   function mensagemWhatsApp(d, protocolo) {
     var linhas = ["Olá, Ronay! Enviei pelo site uma solicitação de cotação de *Seguro " + d.tipo + "*" + (protocolo ? " (protocolo nº " + protocolo + ")" : "") + ".", "", "Nome: " + d.nome];
-    Object.keys(d.detalhes).forEach(function (k) { linhas.push((rotulosDetalhes[k] || k) + ": " + d.detalhes[k]); });
+    if (d.detalhes.cpf) linhas.push("CPF: " + d.detalhes.cpf);
+    if (d.email) linhas.push("E-mail: " + d.email);
+    Object.keys(d.detalhes).forEach(function (k) { if (k !== "cpf") linhas.push((rotulosDetalhes[k] || k) + ": " + d.detalhes[k]); });
+    if (d.observacoes) linhas.push("Observações: " + d.observacoes);
     return linhas.join("\n");
   }
 
@@ -251,6 +276,8 @@
     $("#ok-protocolo").textContent = protocolo ? "nº " + protocolo : "registrado";
     var wa = $("#ok-wa");
     wa.hidden = !temWhatsApp;
+    $("#ok-dica-wa").hidden = !temWhatsApp;
+    $("#ok-dica-sem").hidden = temWhatsApp;
     if (temWhatsApp) wa.href = linkWhatsApp(mensagemWhatsApp(d, protocolo));
     form.hidden = true;
     ok.hidden = false;
@@ -271,7 +298,7 @@
   }
   $("#ok-nova").addEventListener("click", function () { novaSolicitacao(); $("#f-nome").focus(); });
 
-  var camposServidor = { nome: "f-nome", telefone: "f-tel", email: "f-email", observacoes: "f-obs", veiculo: "f-veiculo", ano: "f-ano", cep: "f-cep", imovel: "f-imovel", ocupacao: "f-ocupacao", idade: "f-idade", atividade: "f-atividade", profissao: "f-profissao" };
+  var camposServidor = { nome: "f-nome", telefone: "f-tel", cpf: "f-cpf", email: "f-email", observacoes: "f-obs", veiculo: "f-veiculo", ano: "f-ano", cep: "f-cep", imovel: "f-imovel", ocupacao: "f-ocupacao", idade: "f-idade", atividade: "f-atividade", profissao: "f-profissao" };
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();

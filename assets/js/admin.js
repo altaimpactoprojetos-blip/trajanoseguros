@@ -49,7 +49,7 @@
   async function carregar() {
     $("lista-erro").textContent = "";
     var r = await sb.from("trajano_cotacoes")
-      .select("id, protocolo, tipo, nome, telefone, email, detalhes, observacoes, status, notas_internas, criado_em")
+      .select("id, protocolo, tipo, nome, telefone, cpf, email, detalhes, observacoes, status, notas_internas, criado_em")
       .order("criado_em", { ascending: false }).limit(1000);
     if (r.error) { $("lista-erro").textContent = "Não foi possível carregar: " + r.error.message; return; }
     cotacoes = r.data || [];
@@ -82,6 +82,8 @@
       var tel = li.querySelector(".cot-tel");
       tel.textContent = formatarTelefone(c.telefone);
       tel.href = "https://wa.me/55" + c.telefone + "?text=" + encodeURIComponent("Olá, " + c.nome.split(" ")[0] + "! Aqui é o Ronay, da Trajano Seguros. Recebi sua solicitação de cotação de Seguro " + c.tipo + " (protocolo nº " + c.protocolo + ").");
+      var cpf = li.querySelector(".cot-cpf");
+      if (c.cpf) cpf.textContent = "CPF " + c.cpf.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})$/, "$1.$2.$3-$4"); else cpf.remove();
       var em = li.querySelector(".cot-email");
       if (c.email) { em.textContent = c.email; em.href = "mailto:" + c.email; } else em.remove();
       var dl = li.querySelector(".cot-detalhes");
@@ -112,7 +114,7 @@
   $("atualizar").addEventListener("click", carregar);
 
   $("csv").addEventListener("click", function () {
-    var cols = ["protocolo", "criado_em", "tipo", "status", "nome", "telefone", "email", "detalhes", "observacoes", "notas_internas"];
+    var cols = ["protocolo", "criado_em", "tipo", "status", "nome", "telefone", "cpf", "email", "detalhes", "observacoes", "notas_internas"];
     var esc = function (v) {
       var s = v == null ? "" : (typeof v === "object" ? Object.keys(v).map(function (k) { return (ROTULOS[k] || k) + ": " + v[k]; }).join(" | ") : String(v));
       if (/^[=+\-@]/.test(s)) s = "'" + s; // evita fórmulas ao abrir no Excel
