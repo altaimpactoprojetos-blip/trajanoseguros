@@ -305,14 +305,18 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold);bo
 @media (max-width:860px){.faq-grid{grid-template-columns:1fr}.faq-grid .section-head{position:static}.faq summary{font-size:1.22rem}}
 
 /* ===== Rodapé ===== */
-.footer{background:transparent}
-.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2.5rem;padding-block:4rem 2rem}
+.footer{background:transparent;padding-bottom:96px}
+.section:last-of-type{padding-bottom:clamp(2.25rem,4.5vw,3.5rem)}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2.5rem;padding-block:1.5rem 0}
+.footer-seguros{order:-1}
+.footer-brand{order:-2}
 .footer-brand .brand img{width:64px;height:64px}
 .footer-brand p{color:var(--muted);font-size:.92rem;margin-top:1.1rem;max-width:22rem}
 .footer-title{font-family:var(--f-body);font-size:.74rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin:0 0 1.1rem}
 .footer ul{display:flex;flex-direction:column;gap:.65rem}
+.footer a{transition:color .2s ease}
 .footer ul a{text-decoration:none;color:var(--muted);font-size:.92rem}
-.footer ul a:hover{color:var(--text)}
+.footer ul a:hover,.footer .legal a:hover{color:var(--gold-soft)}
 .footer-contact li{display:flex;gap:.6rem;align-items:flex-start;font-size:.92rem;color:var(--muted)}
 .footer-contact svg{width:17px;height:17px;color:var(--gold);flex:none;margin-top:.25rem}
 .legal{grid-column:1/-1;display:flex;flex-direction:column;gap:.7rem;padding-top:1.4rem;font-size:.8rem;color:#878071}
@@ -320,7 +324,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold);bo
 .legal-data{display:flex;flex-wrap:wrap;gap:.3rem 1.4rem;color:var(--muted)}
 .legal-data:not(:has(span:not([hidden]))){display:none}
 @media (max-width:960px){.footer-grid{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}}
-@media (max-width:560px){.footer-grid{grid-template-columns:1fr;padding-bottom:6rem}}
+@media (max-width:560px){.footer{padding-bottom:88px}.footer-grid{grid-template-columns:1fr}.footer-seguros{order:0}}
 
 /* ===== WhatsApp flutuante ===== */
 .wa-float{position:fixed;z-index:60;right:calc(20px + env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:#1fa855;color:#fff;border:1px solid rgba(255,255,255,.18);box-shadow:0 10px 28px rgba(0,0,0,.45);transition:transform .2s,opacity .25s,visibility .25s}
