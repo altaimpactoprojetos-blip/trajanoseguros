@@ -31,3 +31,9 @@ revoke all on function public.trajano_cpf_valido(text) from public, anon, authen
 --        raise exception 'cpf' using errcode = 'P0001', hint = 'Informe um CPF válido.';
 --      end if;
 --      insert into public.trajano_cotacoes (tipo, nome, telefone, cpf, email, ...) values (..., v_cpf, ...)
+
+-- 4. (21/10, formulário Auto) campo opcional tem_seguro ('Sim'/'Não') aceito em p_detalhes para Auto;
+--    ano mínimo do veículo passa de 1950 para 1980.
+--      when 'Auto' then v_permitidas := array['veiculo', 'ano', 'uso', 'cep', 'tem_seguro']; ...
+--      if v_det ? 'tem_seguro' and v_det ->> 'tem_seguro' not in ('Sim', 'Não') then raise exception 'tem_seguro' ...
+--      if v_ano is null or v_ano < 1980 or ...

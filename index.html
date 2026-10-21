@@ -444,11 +444,19 @@
 
           <!-- Campos de cada produto: só o grupo do tipo escolhido fica ativo -->
           <div class="grid2" data-grupo="Auto">
-            <div class="field"><label class="label" for="f-veiculo">Veículo <span class="req">*</span></label><input id="f-veiculo" name="veiculo" maxlength="120" placeholder="Marca e modelo" required></div>
+            <div class="field"><label class="label" for="f-veiculo">Veículo <span class="req">*</span></label><input id="f-veiculo" name="veiculo" maxlength="120" placeholder="Ex.: Onix 1.0 Turbo LT" aria-describedby="veiculo-dica" required><small class="hint" id="veiculo-dica">Informe marca, modelo e versão.</small></div>
             <div class="field"><label class="label" for="f-ano">Ano do modelo <span class="req">*</span></label><input id="f-ano" name="ano" inputmode="numeric" maxlength="4" placeholder="Ex.: 2023" required></div>
             <div class="field"><label class="label" for="f-uso">Uso <span class="opt">(opcional)</span></label>
-              <select id="f-uso" name="uso"><option value="">Selecione</option><option>Particular</option><option>Trabalho / comercial</option><option>Motorista de aplicativo</option></select></div>
-            <div class="field"><label class="label" for="f-cep">CEP onde o veículo dorme <span class="opt">(opcional)</span></label><input id="f-cep" name="cep" inputmode="numeric" maxlength="9" placeholder="00000-000" autocomplete="postal-code"></div>
+              <select id="f-uso" name="uso"><option value="">Selecione</option><option>Particular</option><option>Trabalho / visitas a clientes</option><option>Aplicativo (Uber, 99 etc.)</option><option>Táxi ou transporte de passageiros</option><option>Outro</option></select></div>
+            <div class="field"><label class="label" for="f-cep">CEP onde o veículo dorme <span class="opt">(opcional)</span></label><input id="f-cep" name="cep" inputmode="numeric" maxlength="9" placeholder="00000-000" autocomplete="postal-code" aria-describedby="cep-dica"><small class="hint" id="cep-dica">O local de pernoite é um dos fatores que mais influenciam o preço.</small></div>
+            <fieldset class="field span2">
+              <legend class="label">Já tem seguro para este veículo? <span class="opt">(opcional)</span></legend>
+              <div class="chips chips-sm">
+                <input type="radio" name="tem_seguro" id="ts-sim" value="Sim"><label for="ts-sim">Sim</label>
+                <input type="radio" name="tem_seguro" id="ts-nao" value="Não"><label for="ts-nao">Não</label>
+              </div>
+              <small class="hint" id="ts-dica" hidden>Tenha em mãos a apólice atual. Ela pode garantir desconto na renovação.</small>
+            </fieldset>
           </div>
           <div class="grid2" data-grupo="Residencial" hidden>
             <div class="field"><label class="label" for="f-imovel">Tipo de imóvel <span class="req">*</span></label>
