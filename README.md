@@ -56,7 +56,7 @@ Projeto **CRM Vitalício** (`lffzxqwgqgsiumunahyt`), arquivo `supabase/migration
 
 ### Liberar o painel `admin.html` para o corretor
 
-1. Supabase → Authentication → Users → **Add user** (e-mail e senha do corretor).
+1. Supabase → Authentication → Users → **Add user** (e-mail e senha do corretor). Usuário já criado: `solysprojetos@gmail.com`.
 2. SQL Editor:
    ```sql
    insert into public.trajano_cotacoes_admins (email) values ('email-do-corretor@dominio.com');
