@@ -48,7 +48,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 section[id],main [id]{scroll-margin-top:calc(var(--header-h) + 8px)}
 .skip{position:absolute;left:12px;top:-60px;z-index:100;background:var(--gold);color:#120d04;padding:.6rem 1rem;border-radius:var(--radius);font-weight:700;text-decoration:none}
 .skip:focus{top:12px}
-.eyebrow{font-size:.74rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.eyebrow{font-size:.76rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
 .fine{font-size:.82rem;color:var(--muted);margin-top:1.4rem}
 .center{text-align:center}
 @media (prefers-reduced-motion:reduce){
