@@ -99,6 +99,15 @@
     secoes.forEach(function (s) { obsSecao.observe(s); });
   }
 
+  /* ===== Dúvidas frequentes: uma pergunta aberta por vez ===== */
+  var faq = $("#faq");
+  if (faq) {
+    faq.addEventListener("toggle", function (e) {
+      if (!e.target.open) return;
+      $$("details[open]", faq).forEach(function (d) { if (d !== e.target) d.open = false; });
+    }, true);
+  }
+
   /* ===== Formulário de cotação ===== */
   var form = $("#quote-form");
   if (!form) return;

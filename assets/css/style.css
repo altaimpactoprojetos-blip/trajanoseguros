@@ -291,14 +291,16 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold);bo
 /* ===== Dúvidas ===== */
 .faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,5vw,4.5rem);align-items:start}
 .faq-grid .section-head{position:sticky;top:calc(var(--header-h) + 1.5rem);margin-bottom:0}
+.faq-cta{margin-top:1.6rem}
 .faq details{border-bottom:1px solid var(--line-soft)}
 .faq details:first-child{border-top:1px solid var(--line-soft)}
 .faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1.2rem;padding:1.3rem 0;font-family:var(--f-display);font-size:1.35rem;font-weight:600;line-height:1.25}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"";flex:none;width:12px;height:12px;border-right:1.5px solid var(--gold);border-bottom:1.5px solid var(--gold);transform:rotate(45deg) translate(-3px,-3px);transition:transform .25s}
-.faq details[open] summary::after{transform:rotate(-135deg) translate(-3px,-3px)}
+.faq summary::after{content:"";flex:none;width:12px;height:12px;border-right:1.5px solid var(--gold);border-bottom:1.5px solid var(--gold);transform:rotate(45deg) translate(-3px,-3px);transition:transform .3s ease}
+.faq details[open] summary::after{transform:rotate(225deg) translate(-3px,-3px)}
 .faq summary:hover{color:var(--gold-soft)}
 .faq details p{color:var(--muted);padding:0 2rem 1.4rem 0;max-width:44rem}
+.faq details p a{color:var(--gold-soft)}
 @media (max-width:860px){.faq-grid{grid-template-columns:1fr}.faq-grid .section-head{position:static}.faq summary{font-size:1.22rem}}
 
 /* ===== Rodapé ===== */

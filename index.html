@@ -48,6 +48,86 @@
     "founder": { "@type": "Person", "name": "Ronay Trajano", "jobTitle": "Corretor de seguros" }
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "A cotação tem algum custo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não. A cotação é gratuita e sem compromisso. A remuneração do corretor vem da seguradora, apenas se você decidir contratar, e já está incluída no preço do seguro."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "A corretora é registrada na SUSEP?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. Nosso registro SUSEP é 251172774. Você pode consultá-lo no site da SUSEP."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso comparar propostas de diferentes seguradoras?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. Esse é o papel do corretor: reunir as propostas das seguradoras com que trabalha e mostrar as diferenças de coberturas, franquias, assistências e preço, para você decidir com clareza."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quais fatores influenciam o preço do seguro?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Depende do produto. No seguro auto, por exemplo, pesam o modelo e o ano do veículo, a região onde ele circula e dorme, o perfil do condutor e as coberturas escolhidas. Cada seguradora tem os seus próprios critérios de cálculo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O que é franquia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "É a parte do prejuízo que fica por conta do segurado em determinados sinistros, como um dano parcial no carro. Em geral, franquia menor deixa o seguro mais caro, e franquia maior, mais barato. O valor e as regras estão na proposta de cada seguradora."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como funcionam as coberturas e exclusões?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "As coberturas são os eventos que o seguro protege; as exclusões são as situações que ele não cobre. Ambas estão descritas nas condições gerais da apólice. Antes da contratação, mostramos os pontos principais para você saber exatamente o que está contratando."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quanto tempo demora o processo de contratação?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Varia conforme o produto e a seguradora. Alguns seguros exigem vistoria, documentos ou declarações adicionais, e a seguradora tem um prazo para analisar a proposta. A cobertura começa nas condições e na data indicadas pela seguradora."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O que devo fazer em caso de sinistro?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Primeiro, garanta a segurança das pessoas e, quando necessário, registre o boletim de ocorrência. Depois, comunique o ocorrido o quanto antes à seguradora ou ao seu corretor. Orientamos sobre os canais de aviso e os documentos solicitados; a análise e a indenização são feitas pela seguradora, conforme a apólice."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso cancelar o seguro depois de contratado?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. O seguro pode ser cancelado a qualquer momento, a seu pedido. A seguradora devolve a parte do prêmio proporcional ao período não utilizado, descontados os valores previstos nas condições da apólice. Antes de cancelar, fale com a gente: muitas vezes é possível ajustar a apólice em vez de encerrá-la."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -421,39 +501,48 @@
   <!-- ===== Dúvidas frequentes ===== -->
   <section class="section section-alt" id="duvidas" aria-labelledby="faq-titulo">
     <div class="wrap faq-grid">
-      <header class="section-head">
+      <header class="section-head faq-head">
         <p class="eyebrow">Dúvidas frequentes</p>
-        <h2 id="faq-titulo">Antes de contratar, entenda.</h2>
-        <p>Preços, coberturas, prazos e condições sempre dependem da proposta e do contrato de cada seguradora. Se a sua dúvida não estiver aqui, fale com a gente.</p>
+        <h2 id="faq-titulo">Antes de contratar,<br>entenda.</h2>
+        <p>Preços, coberturas e condições dependem da proposta e do contrato de cada seguradora. Não achou sua dúvida? Fale com a gente.</p>
+        <a class="btn btn-gold faq-cta" href="https://wa.me/5585986768338" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Conversar pelo WhatsApp</a>
       </header>
-      <div class="faq">
+      <div class="faq" id="faq">
         <details>
-          <summary>Como funciona a cotação?</summary>
-          <p>Você envia os dados básicos pelo formulário ou pelo WhatsApp. Com eles, consultamos as seguradoras disponíveis para o seu perfil e apresentamos as propostas. Pedir cotação não gera compromisso nem custo.</p>
+          <summary>A cotação tem algum custo?</summary>
+          <p>Não. A cotação é gratuita e sem compromisso. A remuneração do corretor vem da seguradora, apenas se você decidir contratar, e já está incluída no preço do seguro.</p>
+        </details>
+        <details>
+          <summary>A corretora é registrada na SUSEP?</summary>
+          <p>Sim. Nosso registro SUSEP é 251172774. Você pode consultá-lo no <a href="https://www.gov.br/susep/pt-br" target="_blank" rel="noopener">site da SUSEP</a>.</p>
         </details>
         <details>
           <summary>Posso comparar propostas de diferentes seguradoras?</summary>
           <p>Sim. Esse é o papel do corretor: reunir as propostas das seguradoras com que trabalha e mostrar as diferenças de coberturas, franquias, assistências e preço, para você decidir com clareza.</p>
         </details>
         <details>
-          <summary>O que é franquia?</summary>
-          <p>É a parte do prejuízo que fica por conta do segurado em determinados sinistros, como um dano parcial no carro. Em geral, franquia menor deixa o seguro mais caro, e franquia maior, mais barato. O valor e as regras estão na proposta de cada seguradora.</p>
-        </details>
-        <details>
           <summary>Quais fatores influenciam o preço do seguro?</summary>
           <p>Depende do produto. No seguro auto, por exemplo, pesam o modelo e o ano do veículo, a região onde ele circula e dorme, o perfil do condutor e as coberturas escolhidas. Cada seguradora tem os seus próprios critérios de cálculo.</p>
+        </details>
+        <details>
+          <summary>O que é franquia?</summary>
+          <p>É a parte do prejuízo que fica por conta do segurado em determinados sinistros, como um dano parcial no carro. Em geral, franquia menor deixa o seguro mais caro, e franquia maior, mais barato. O valor e as regras estão na proposta de cada seguradora.</p>
         </details>
         <details>
           <summary>Como funcionam as coberturas e exclusões?</summary>
           <p>As coberturas são os eventos que o seguro protege; as exclusões são as situações que ele não cobre. Ambas estão descritas nas condições gerais da apólice. Antes da contratação, mostramos os pontos principais para você saber exatamente o que está contratando.</p>
         </details>
         <details>
+          <summary>Quanto tempo demora o processo de contratação?</summary>
+          <p>Varia conforme o produto e a seguradora. Alguns seguros exigem vistoria, documentos ou declarações adicionais, e a seguradora tem um prazo para analisar a proposta. A cobertura começa nas condições e na data indicadas pela seguradora.</p>
+        </details>
+        <details>
           <summary>O que devo fazer em caso de sinistro?</summary>
           <p>Primeiro, garanta a segurança das pessoas e, quando necessário, registre o boletim de ocorrência. Depois, comunique o ocorrido o quanto antes à seguradora ou ao seu corretor. Orientamos sobre os canais de aviso e os documentos solicitados; a análise e a indenização são feitas pela seguradora, conforme a apólice.</p>
         </details>
         <details>
-          <summary>Quanto tempo demora o processo de contratação?</summary>
-          <p>Varia conforme o produto e a seguradora. Alguns seguros exigem vistoria, documentos ou declarações adicionais, e a seguradora tem um prazo para analisar a proposta. A cobertura começa nas condições e na data indicadas pela seguradora.</p>
+          <summary>Posso cancelar o seguro depois de contratado?</summary>
+          <p>Sim. O seguro pode ser cancelado a qualquer momento, a seu pedido. A seguradora devolve a parte do prêmio proporcional ao período não utilizado, descontados os valores previstos nas condições da apólice. Antes de cancelar, fale com a gente: muitas vezes é possível ajustar a apólice em vez de encerrá-la.</p>
         </details>
       </div>
     </div>
